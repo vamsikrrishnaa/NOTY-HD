@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/types.d.ts","./src/vite-env.d.ts","./src/components/floatinginput.tsx","./src/components/googlebutton.tsx","./src/components/noteeditor.tsx","./src/contexts/authcontext.tsx","./src/lib/api.ts","./src/pages/dashboard.tsx","./src/pages/signin.tsx","./src/pages/signup.tsx"],"version":"5.9.2"}
