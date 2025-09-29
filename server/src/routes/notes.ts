@@ -1,8 +1,8 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { z } from 'zod';
-import { requireAuth } from '../middlewares/auth';
-import { NoteModel } from '../models/Note';
-import { requireCsrf } from '../middlewares/csrf';
+import { requireAuth } from '../middlewares/auth.js';
+import { NoteModel } from '../models/Note.js';
+import { requireCsrf } from '../middlewares/csrf.js';
 
 const router = Router();
 

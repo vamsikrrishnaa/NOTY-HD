@@ -1,5 +1,5 @@
 import jwt, { type Secret, type SignOptions } from 'jsonwebtoken';
-import { env, isProd } from '../config';
+import { env, isProd } from '../config.js';
 import { Response } from 'express';
 import crypto from 'crypto';
 

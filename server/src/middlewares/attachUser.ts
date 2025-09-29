@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { verifyJwt, signJwt, setAuthCookie } from '../utils/jwt';
+import { verifyJwt, signJwt, setAuthCookie } from '../utils/jwt.js';
 
 export function attachUser(req: Request, res: Response, next: NextFunction) {
   const token = req.cookies?.token;

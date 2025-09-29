@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { env } from '../config';
+import { env } from '../config.js';
 
 export interface SendMailParams {
   to: string;

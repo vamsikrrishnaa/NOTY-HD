@@ -5,11 +5,11 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
-import { env, isProd } from './config';
-import { attachUser } from './middlewares/attachUser';
-import authRoutes from './routes/auth';
-import notesRoutes from './routes/notes';
-import { errorHandler } from './middlewares/error';
+import { env, isProd } from './config.js';
+import { attachUser } from './middlewares/attachUser.js';
+import authRoutes from './routes/auth.js';
+import notesRoutes from './routes/notes.js';
+import { errorHandler } from './middlewares/error.js';
 
 export function createApp() {
   const app = express();

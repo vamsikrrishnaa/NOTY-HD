@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { verifyJwt } from '../utils/jwt';
+import { verifyJwt } from '../utils/jwt.js';
 
 export function requireAuth(req: Request, res: Response, next: NextFunction) {
   const token = req.cookies?.token;

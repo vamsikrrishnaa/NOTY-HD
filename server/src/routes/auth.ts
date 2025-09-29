@@ -1,12 +1,12 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import bcrypt from 'bcryptjs';
-import { requestOtpSchema, verifyOtpSchema, googleSchema } from '../validators/authSchemas';
-import { OtpModel } from '../models/Otp';
-import { UserModel } from '../models/User';
-import { sendMail } from '../utils/mailer';
+import { requestOtpSchema, verifyOtpSchema, googleSchema } from '../validators/authSchemas.js';
+import { OtpModel } from '../models/Otp.js';
+import { UserModel } from '../models/User.js';
+import { sendMail } from '../utils/mailer.js';
 import { OAuth2Client } from 'google-auth-library';
-import { env } from '../config';
-import { setAuthCookie, clearAuthCookie, signJwt, generateCsrfToken, setCsrfCookie, clearCsrfCookie } from '../utils/jwt';
+import { env } from '../config.js';
+import { setAuthCookie, clearAuthCookie, signJwt, generateCsrfToken, setCsrfCookie, clearCsrfCookie } from '../utils/jwt.js';
 
 const router = Router();
 
