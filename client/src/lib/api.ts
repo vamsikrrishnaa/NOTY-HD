@@ -7,11 +7,19 @@ function getCookie(name: string) {
 }
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
-  const isMutation = (init?.method && init.method !== 'GET') ? true : false
+  const method = (init?.method || 'GET').toUpperCase()
+  const isMutation = method !== 'GET'
   const csrf = isMutation ? getCookie('csrf') : undefined
+
+  const headers: Record<string, string> = { ...(init?.headers as any) }
+  if (isMutation) {
+    headers['Content-Type'] = headers['Content-Type'] || 'application/json'
+    if (csrf) headers['x-csrf-token'] = csrf
+  }
+
   const res = await fetch(`${API_BASE}${path}`, {
     credentials: 'include',
-    headers: { 'Content-Type': 'application/json', ...(csrf ? { 'x-csrf-token': csrf } : {}), ...(init?.headers || {}) },
+    headers,
     ...init,
   })
   const data = await res.json().catch(() => ({}))
