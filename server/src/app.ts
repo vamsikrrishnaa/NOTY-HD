@@ -19,9 +19,18 @@ export function createApp() {
   app.use(express.json());
   app.use(cookieParser());
 
+  // Build allowed origins list from env
+  const allowedOrigins = [
+    env.CLIENT_ORIGIN,
+    ...((env.CLIENT_ORIGINS || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean)),
+  ];
+
   app.use(
     cors({
-      origin: env.CLIENT_ORIGIN,
+      origin: allowedOrigins,
       credentials: true,
     })
   );
